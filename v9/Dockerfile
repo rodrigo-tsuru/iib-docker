@@ -6,8 +6,9 @@ RUN cd /tmp && wget https://googledrive.com/host/0B1TfHhOuw5TLMWw2YkNITVhWWjQ/9.
 RUN cd /tmp && \
 tar -zvxf 9.0.0-IIB-LINUXX64-DEVELOPER-RUNTIME.tar.gz && \
 rm 9.0.0-IIB-LINUXX64-DEVELOPER-RUNTIME.tar.gz
-RUN integrationbus_developer/WebSphere_MQ/mqlicense.sh -accept && \
-yes | rpm -ivh integrationbus_developer/WebSphere_MQ/*.rpm
+RUN cd /tmp/integrationbus_developer/WebSphere_MQ && \ 
+./mqlicense.sh -accept && \
+yes | rpm -ivh *.rpm
 COPY install.rsp /tmp/install.rsp
 RUN cd /tmp/integrationbus_developer/ && \
 ./setuplinuxx64 -f /tmp/install.rsp && \
