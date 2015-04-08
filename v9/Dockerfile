@@ -12,5 +12,5 @@ rm MQSeriesExplorer-7.5.0-3.x86_64.rpm && \
 yes | rpm -ivh *.rpm
 COPY install.rsp /tmp/install.rsp
 RUN cd /tmp/integrationbus_developer/ && \
-./setuplinuxx64 -f /tmp/install.rsp && \
+./setuplinuxx64 -i silent -f /tmp/install.rsp && \
 rm -Rf /tmp/integrationbus_developer
