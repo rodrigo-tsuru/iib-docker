@@ -14,5 +14,5 @@ rpm -ivh *.rpm
 COPY install.rsp /tmp/install.rsp
 RUN /opt/mqm/bin/setmqinst -p /opt/mqm -i && \
 cd /tmp/integrationbus_developer/ && \
-./setuplinuxx64 -i silent -f /tmp/install.rsp && \
+./setuplinuxx64 -i silent -f /tmp/install.rsp;cat /var/mqsi/WMBDBE_201.log && \
 rm -Rf /tmp/integrationbus_developer
